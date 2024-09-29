@@ -1,5 +1,6 @@
 import { ThemeToggle } from "@/components/theme-toggle";
 import { siteConfig } from "@/config/site-config";
+import { Mail, MapPin } from "lucide-react";
 import Image from "next/image";
 
 export default function Home() {
@@ -19,6 +20,7 @@ export default function Home() {
             placeholder="blur"
             blurDataURL="/profilePic-modified.png"
           />
+          {/* Content Container */}
           <div className="">
             {/* Title */}
             <div className="text-primary text-xl font-semibold">
@@ -27,10 +29,27 @@ export default function Home() {
             {/* Full Name */}
             <h1 className="text-4xl font-bold mt-2">{siteConfig.creator}</h1>
             {/* Bio */}
-            <p className="text-lg text-neutral-500 text-2xl">{siteConfig.bio}</p>
+            <p className="text-lg text-neutral-500 text-2xl">
+              {siteConfig.bio}
+            </p>
           </div>
           {/* Buttons */}
-
+          <div className="flex items-center gap-6 justify-between">
+            <a
+              className="border border-neutral-200 dark:border-neutral-800 py-2 px-3 rounded-md flex items-center gap-2 w-full text-sm"
+              href={siteConfig.locationLink}
+            >
+              <MapPin size="16" />
+              {siteConfig.location}
+            </a>
+            <a
+              className="border border-neutral-200 dark:border-neutral-800 py-2 px-3 rounded-md flex items-center gap-2 w-full text-sm"
+              href={`mailto:${siteConfig.email}`}
+            >
+              <Mail size="16" />
+              Contact Me
+            </a>
+          </div>
           {/* Footer */}
         </div>
       </div>
