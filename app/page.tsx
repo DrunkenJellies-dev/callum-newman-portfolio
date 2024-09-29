@@ -29,33 +29,40 @@ export default function Home() {
             {/* Full Name */}
             <h1 className="text-4xl font-bold mt-2">{siteConfig.creator}</h1>
             {/* Bio */}
-            <p className="text-lg text-neutral-500 text-2xl">
+            <p className="text-lg text-neutral-500">
               {siteConfig.bio}
             </p>
           </div>
           {/* Buttons */}
           <div className="flex items-center gap-6 justify-between">
             <a
-              className="border border-neutral-200 dark:border-neutral-800 py-2 px-3 rounded-md flex items-center gap-2 w-full text-sm"
-              href={siteConfig.locationLink}
+              href={`${siteConfig.locationLink}`}
+              className="flex items-center w-full gap-2 px-4 py-2 text-sm font-medium border rounded-md border-neutral-100 dark:border-neutral-800"
             >
-              <MapPin size="16" />
+              <MapPin size="14" />
               {siteConfig.location}
             </a>
             <a
-              className="border border-neutral-200 dark:border-neutral-800 py-2 px-3 rounded-md flex items-center gap-2 w-full text-sm"
               href={`mailto:${siteConfig.email}`}
+              className="flex items-center w-full gap-2 px-4 py-2 text-sm font-medium border rounded-md border-neutral-100 dark:border-neutral-800"
             >
-              <Mail size="16" />
+              <Mail size="14" />
               Contact Me
             </a>
           </div>
           {/* Footer */}
+          <div className="border-t border-neutral-100 dark:border-neutral-800 pt-6 text-xs flex items-center justify-between">
+            <div className="text-neutral-500">
+              Built by Callum Newman | 2023 DrunkenJellies-dev. All Rights
+              Reserved
+            </div>
+            <ThemeToggle />
+          </div>
         </div>
       </div>
       {/* Right Side */}
       <div className="flex-1 p-6 h-full w-full gap-10">
-        <div className="dark:bg-emerald-700 rounded-md h-full flex items-center justify-center items-center">
+        <div className="dark:bg-emerald-700 rounded-md h-full flex items-center justify-center">
           Right Side
         </div>
       </div>
