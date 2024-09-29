@@ -3,6 +3,42 @@ import { siteConfig } from "@/config/site-config";
 import { Mail, MapPin } from "lucide-react";
 import Image from "next/image";
 
+const gridItems = new Array(64).fill(0);
+const gridItems2 = [
+  {
+    className: "rounded-md bg-emerald-100 col-span-2 row-span-2",
+  },
+  {
+    className: "rounded-md bg-emerald-100 col-span-1 row-span-2",
+  },
+  {
+    className: "rounded-md bg-emerald-100 col-span-1 row-span-2",
+  },
+  {
+    className: "rounded-md bg-emerald-100 col-span-2 row-span-4",
+  },
+  {
+    className: "rounded-md bg-emerald-100 col-span-2 row-span-2",
+  },
+  {
+    className: "rounded-md bg-emerald-100 col-span-2 row-span-1",
+  },
+  {
+    className: "rounded-md bg-emerald-100 col-span-2 row-span-1",
+  },
+  {
+    className: "rounded-md bg-emerald-100 col-span-2 row-span-1",
+  },
+  {
+    className: "rounded-md bg-emerald-100 col-span-2 row-span-2",
+  },
+  {
+    className: "rounded-md bg-emerald-100 col-span-2 row-span-1",
+  },
+];
+
+console.log(gridItems);
+
 export default function Home() {
   return (
     <main className="flex gap-10 w-full h-full flex-1">
@@ -29,9 +65,7 @@ export default function Home() {
             {/* Full Name */}
             <h1 className="text-4xl font-bold mt-2">{siteConfig.creator}</h1>
             {/* Bio */}
-            <p className="text-lg text-neutral-500">
-              {siteConfig.bio}
-            </p>
+            <p className="text-lg text-neutral-500">{siteConfig.bio}</p>
           </div>
           {/* Buttons */}
           <div className="flex items-center gap-6 justify-between">
@@ -62,8 +96,14 @@ export default function Home() {
       </div>
       {/* Right Side */}
       <div className="flex-1 p-6 h-full w-full gap-10">
-        <div className="dark:bg-emerald-700 rounded-md h-full flex items-center justify-center">
-          Right Side
+        {/* Grid Container */}
+        <div className="w-full h-full grid grid-cols-4 auto-rows-[74px] gap-10 overflow-y-auto p-6">
+          {/* Grid Items */}
+          {gridItems2.map((item, index) => {
+            return (
+              <div className={item.className} key={index}/>
+            );
+          })}
         </div>
       </div>
     </main>
