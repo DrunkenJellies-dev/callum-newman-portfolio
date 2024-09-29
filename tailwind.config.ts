@@ -8,7 +8,7 @@ const config: Config = {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    extent: {
+    extend: {
       colors: {
         primary: "#6178F1",
         youtube: "#FF0000",
