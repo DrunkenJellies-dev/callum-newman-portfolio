@@ -36,6 +36,7 @@ const sfPro = localFont({
       style: "normal",
     },
   ],
+  variable: "--font-sfpro",
 });
 
 export const metadata: Metadata = {
