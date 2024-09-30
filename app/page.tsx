@@ -1,43 +1,8 @@
+import GridItem from "@/components/grid-item";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { siteConfig } from "@/config/site-config";
 import { Mail, MapPin } from "lucide-react";
 import Image from "next/image";
-
-const gridItems = new Array(64).fill(0);
-const gridItems2 = [
-  {
-    className: "rounded-md bg-emerald-100 col-span-2 row-span-2",
-  },
-  {
-    className: "rounded-md bg-emerald-100 col-span-1 row-span-2",
-  },
-  {
-    className: "rounded-md bg-emerald-100 col-span-1 row-span-2",
-  },
-  {
-    className: "rounded-md bg-emerald-100 col-span-2 row-span-4",
-  },
-  {
-    className: "rounded-md bg-emerald-100 col-span-2 row-span-2",
-  },
-  {
-    className: "rounded-md bg-emerald-100 col-span-2 row-span-1",
-  },
-  {
-    className: "rounded-md bg-emerald-100 col-span-2 row-span-1",
-  },
-  {
-    className: "rounded-md bg-emerald-100 col-span-2 row-span-1",
-  },
-  {
-    className: "rounded-md bg-emerald-100 col-span-2 row-span-2",
-  },
-  {
-    className: "rounded-md bg-emerald-100 col-span-2 row-span-1",
-  },
-];
-
-console.log(gridItems);
 
 export default function Home() {
   return (
@@ -99,9 +64,11 @@ export default function Home() {
         {/* Grid Container */}
         <div className="w-full h-full grid grid-cols-4 auto-rows-[74px] gap-10 overflow-y-auto p-6">
           {/* Grid Items */}
-          {gridItems2.map((item, index) => {
+          {siteConfig.items.map((item, index) => {
             return (
-              <div className={item.className} key={index}/>
+              <GridItem key={item.title + index} size={item.layout}>
+                <div>{item.title}</div>
+              </GridItem>
             );
           })}
         </div>
