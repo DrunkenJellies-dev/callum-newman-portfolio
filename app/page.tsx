@@ -1,4 +1,5 @@
 import GridItem from "@/components/grid-item";
+import MentorshipBox from "@/components/grid-items/mentorship-box";
 import SocialBox from "@/components/grid-items/social-box";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { siteConfig } from "@/config/site-config";
@@ -70,8 +71,10 @@ export default function Home() {
               <GridItem key={item.title + index} size={item.layout}>
                 {item.type === "social" ? (
                   <SocialBox item={item} />
+                ) : item.type === "mentor" ? (
+                  <MentorshipBox item={item} />
                 ) : (
-                  <div>Not Implemented Yet</div>
+                  <div>Not Yet Implemented</div>
                 )}
               </GridItem>
             );
