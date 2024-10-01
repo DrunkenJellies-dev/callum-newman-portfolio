@@ -1,4 +1,5 @@
 import GridItem from "@/components/grid-item";
+import SocialBox from "@/components/grid-items/social-box";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { siteConfig } from "@/config/site-config";
 import { Mail, MapPin } from "lucide-react";
@@ -67,7 +68,11 @@ export default function Home() {
           {siteConfig.items.map((item, index) => {
             return (
               <GridItem key={item.title + index} size={item.layout}>
-                <div>{item.title}</div>
+                {item.type === "social" ? (
+                  <SocialBox item={item} />
+                ) : (
+                  <div>Not Implemented Yet</div>
+                )}
               </GridItem>
             );
           })}
